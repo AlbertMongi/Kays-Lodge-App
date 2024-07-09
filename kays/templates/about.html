@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static 'images' as baseurl %}
+{% block content %}
+
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Page Header Start -->
+    <div  class="container-fluid page-header mb-5 p-0" style="background-image: url('{% static "img/carousel-1.jpg" %}');">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center pb-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                       
+                        
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
+                    <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Kays Lodge</span></h1>
+                    
+                    <p class="mb-4"> </br>Make a tranquil escape to our Dar es Salaam lodge on the Peninsula, Authentic service where your comfort, security and accommodation cleanliness is a top priority.</br>
+
+                    </br>Our lodge has been operating in the  outskirts of the Peninsula since 2014 with over 500 international  guests each year, we are proud in achieving guest satisfaction for comfort, security and
+            cleanliness.</br>
+            
+                  </br>The lodge has 24 hrs Genset electricity back-up to run air conditioning units and 24 hrs reception service. The compound has electric fencing, CCTV, and protected by our own security guard in a gated compound sufficient for up to 8 vehicles.</p>
+                    <div class="row g-3 pb-4">
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="border rounded p-1">
+                                <div class="border rounded text-center p-4">
+                                    <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">15</h2>
+                                    <p class="mb-0">Rooms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="border rounded p-1">
+                                <div class="border rounded text-center p-4">
+                                    <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">10</h2>
+                                    <p class="mb-0">Staffs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="border rounded p-1">
+                                <div class="border rounded text-center p-4">
+                                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
+                                    <p class="mb-0">Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'gallery' %}">Explore More</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{% static 'img/about-1.jpg' %}" style="margin-top: 25%;">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="{% static 'img/about-2.jpg' %}">
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="{% static 'img/about-3.jpg' %}">
+                        </div>
+                        <div class="col-6 text-start">
+                            <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="{% static 'img/about-4.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+     
+   <!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
+            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
+        </div>
+        <div class="row g-4">
+            {% for team in teams %}
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="rounded shadow overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/said.jpeg' %}" alt="">
+
+                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                        </div>
+                    </div>
+                    <div class="text-center p-4 mt-3">
+                        <h5 class="fw-bold mb-0">{{ team.name }}</h5>
+                        <small>{{ team.desc }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+
+      <!-- Newsletter Start -->
+    <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 border rounded p-1">
+                <div class="border rounded text-center p-1">
+                    <div class="bg-white rounded text-center p-5">
+                        <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+                        <form id="subscriber-form" method="post" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input name="email" class="form-control w-100 py-3 ps-4 pe-5" type="email" placeholder="Enter your email">
+                                <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+                            </div>
+                            <div class="form-error" id="email-subscriber-error"></div>
+                            <div class="success-message" id="subscriber-success" style="color: rgb(243, 169, 9);"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#contact-form').submit(function(event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success_message_contact) {
+                        $('#contact-success').text(response.success_message_contact);
+                    }
+                    // Handle other success scenarios or clear form fields
+                },
+                error: function(response) {
+                    // Handle errors or validation errors
+                    if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                        // Display validation errors
+                        // Example assuming you have a div with id 'contact-errors'
+                        $('#contact-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                    }
+                }
+            });
+        });
+
+        $('#subscriber-form').submit(function(event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+            
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success_message_services) {
+                        $('#subscriber-success').text(response.success_message_services);
+                    }
+                    // Handle other success scenarios or clear form fields
+                },
+                error: function(response) {
+                    // Handle errors or validation errors
+                    if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                        // Display validation errors
+                        // Example assuming you have a div with id 'subscriber-errors'
+                        $('#subscriber-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
