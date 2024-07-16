@@ -1,1 +1,1 @@
-web: gunicorn kays.wsgi --log-file -
+web: gunicorn kays_lodge.wsgi --log-file -
