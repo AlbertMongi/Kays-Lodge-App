@@ -1,4 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<style>
+  .text-body {
+      text-align: justify;  /* Justify text to create straight edges */
+      text-justify: inter-word; /* Ensure justification between words */
+      max-width: 100%;  /* Limit the maximum width */
+      overflow-wrap: break-word; /* Wrap long words */
+  }
+</style>
+
 <div class="container-xxl bg-white p-0">
   <!-- Spinner Start -->
   <div
@@ -57,7 +66,7 @@
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="p-3" style="max-width: 700px">
               <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
-              <h1 class="display-6 text-white mb-4 animated slideInDown">Try our Delux room experience for an extra luxury stay</h1>
+              <h1 class="display-6 text-white mb-4 animated slideInDown">Try our Deluxe room experience for an extra luxury stay</h1>
               <a href="{% url 'rooms' %}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
               <a href="{% url 'booking' %}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Reserve A Room</a>
             </div>
@@ -90,7 +99,7 @@
             <span class="text-primary text-uppercase">Kays Lodge</span>
           </h1>
           <p class="mb-4">
-          </br>Make a tranquil escape to our Dar es Salaam lodge on the Peninsula, Authentic service where your comfort, security and accommodation cleanliness is a top priority.</br>
+          </br>Make a tranquil escape to our Dar es Salaam lodge on the Peninsula. Authentic service where your comfort, security and accommodation cleanliness is a top priority.</br>
 
         </br>Our lodge has been operating in the  outskirts of the Peninsula since 2014 with over 500 international  guests each year, we are proud in achieving guest satisfaction for comfort, security and
 cleanliness.</br>
@@ -211,7 +220,7 @@ cleanliness.</br>
                 </div>
                 <div class="p-4 mt-2">
                     <div class="d-flex justify-content-between mb-3">
-                        <h5 class="mb-0">Twin Standard Room</h5>
+                        <h5 class="mb-0">Standard Twin Room</h5>
                         <div class="ps-2">
                           
                         </div>
@@ -408,6 +417,42 @@ cleanliness.</br>
                 <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
             </div>
             <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item rounded" href="#">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-glass-cheers fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Bar and Restaurant</h5>
+                        <p class="text-body mb-0">Offers a wide range of local and international cuisine for breakfast, lunch and evening meals and fully stocked bar
+                            with beers, wines, and spirits to ensure great customer satisfaction. Room service is also available
+                            on request at 1 USD each time. </p>
+                        <a href="path_to_your_pdf_file.pdf" class="text-decoration-none ms-2" download>Food Menu download pdf</a>
+                    </a>
+                    <div class="text-center mt-4">
+                        <!-- <a href="path_to_your_pdf_file.pdf" class="btn btn-primary rounded-pill" download>Download PDF</a> -->
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <a class="service-item rounded" href="#">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-150 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-dumbbell fa-2x text-primary"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Laundry Services</h5>
+                        <p class="text-body mb-0">We offer guest washing and ironing services for a small cost payable directly to staff. Let us take
+                            the hustle out of your travels. Please ensure you complete your inventory sheet before giving away
+                            your clothing items to ensure we deliver you a service with full peace of mind.</p>
+                        <a href="path_to_your_pdf_file.pdf" class="text-decoration-none ms-2" download>Inventory sheet download pdf</a>
+                    </a>
+                    <div class="text-center mt-4">
+                        
+                    </div>
+                </div>
+    
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <a class="service-item rounded" href="#">
                         <div class="service-icon bg-transparent border rounded p-1">
@@ -419,50 +464,6 @@ cleanliness.</br>
                         <p class="text-body mb-0">We can arrange Airport collection and drop off for an additional cost with one of our independent
                             partners (Cost USD 30 or TSH equivalent).</p>
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="service-item rounded" href="#">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-glass-cheers fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Bar and Restaurant</h5>
-                        <p class="text-body mb-0">Offer a wide range of local and international cuisine for lunch and evening meals and fully stocked bar
-                            with beers, wines, and spirits to ensure great customer satisfaction. Room service is also available
-                            on request at 1 USD each time. </p><a href="path_to_your_pdf_file.pdf" class="text-decoration-none ms-2" download>Food Menu download pdf</a>
-                       
-                        
-                    </a>
-                    <div class="text-center mt-4">
-                        <!-- <a href="path_to_your_pdf_file.pdf" class="btn btn-primary rounded-pill" download>Download PDF</a> -->
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <a class="service-item rounded" href="#">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-150 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-dumbbell fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Laundry Services</h5>
-                        <style>
-                            .text-body {
-                                text-align: justify;  /* Justify text to create straight edges */
-                                text-justify: inter-word; /* Ensure justification between words */
-                                max-width: 100%;  /* Limit the maximum width */
-                                overflow-wrap: break-word; /* Wrap long words */
-                            }
-                        </style>
-                        
-                        <p class="text-body mb-0">We offer guest washing and ironing services for a small cost payable directly to staff. Let us take
-                            the hustle out of your travels. Please ensure you complete your inventory sheet before giving away
-                            your clothing items to ensure we deliver you a service with full peace of mind.</p><a href="path_to_your_pdf_file.pdf" class="text-decoration-none ms-2" download>inventory sheet download</a>
-                    </a>
-                    <div class="text-center mt-4">
-                        
-                    </div>
                 </div>
             </div>
         </div>
@@ -496,115 +497,86 @@ cleanliness.</br>
 
       <!-- Testimonial End -->
 
-  <!-- Team Start -->
-<div class="container-xxl py-5">
-  <div class="container">
-      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
-          <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
-      </div>
-      <div class="row g-4">
-          {% for team in teams %}
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="rounded shadow overflow-hidden">
-                  <div class="position-relative">
-                      <img class="img-fluid" src="{% static 'img/said.jpeg' %}" alt="">
 
-                      <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                      </div>
-                  </div>
-                  <div class="text-center p-4 mt-3">
-                      <h5 class="fw-bold mb-0">{{ team.name }}</h5>
-                      <small>{{ team.desc }}</small>
-                  </div>
-              </div>
-          </div>
-          {% endfor %}
-      </div>
-  </div>
+
+   <!-- Newsletter Start -->
+   <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 border rounded p-1">
+            <div class="border rounded text-center p-1">
+                <div class="bg-white rounded text-center p-5">
+                    <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+                    <form id="subscriber-form" method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input name="email" class="form-control w-100 py-3 ps-4 pe-5" type="email" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+                        </div>
+                        <div class="form-error" id="email-subscriber-error"></div>
+                        <div class="success-message" id="subscriber-success" style="color: rgb(243, 169, 9);"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- Team End -->
 
-
-     <!-- Newsletter Start -->
-     <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-      <div class="row justify-content-center">
-          <div class="col-lg-10 border rounded p-1">
-              <div class="border rounded text-center p-1">
-                  <div class="bg-white rounded text-center p-5">
-                      <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
-                      <form id="subscriber-form" method="post" action="{% url 'contact' %}">
-                          {% csrf_token %}
-                          <div class="position-relative mx-auto" style="max-width: 400px;">
-                              <input name="email" class="form-control w-100 py-3 ps-4 pe-5" type="email" placeholder="Enter your email">
-                              <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
-                          </div>
-                          <div class="form-error" id="email-subscriber-error"></div>
-                          <div class="success-message" id="subscriber-success" style="color: rgb(243, 169, 9);"></div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function() {
-      $('#contact-form').submit(function(event) {
-          event.preventDefault();
-          var formData = $(this).serialize();
-          
-          $.ajax({
-              type: 'POST',
-              url: $(this).attr('action'),
-              data: formData,
-              dataType: 'json',
-              success: function(response) {
-                  if (response.success_message_contact) {
-                      $('#contact-success').text(response.success_message_contact);
-                  }
-                  // Handle other success scenarios or clear form fields
-              },
-              error: function(response) {
-                  // Handle errors or validation errors
-                  if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
-                      // Display validation errors
-                      // Example assuming you have a div with id 'contact-errors'
-                      $('#contact-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
-                  }
-              }
-          });
-      });
+$(document).ready(function() {
+    $('#contact-form').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success_message_contact) {
+                    $('#contact-success').text(response.success_message_contact);
+                }
+                // Handle other success scenarios or clear form fields
+            },
+            error: function(response) {
+                // Handle errors or validation errors
+                if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                    // Display validation errors
+                    // Example assuming you have a div with id 'contact-errors'
+                    $('#contact-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                }
+            }
+        });
+    });
 
-      $('#subscriber-form').submit(function(event) {
-          event.preventDefault();
-          var formData = $(this).serialize();
-          
-          $.ajax({
-              type: 'POST',
-              url: $(this).attr('action'),
-              data: formData,
-              dataType: 'json',
-              success: function(response) {
-                  if (response.success_message_services) {
-                      $('#subscriber-success').text(response.success_message_services);
-                  }
-                  // Handle other success scenarios or clear form fields
-              },
-              error: function(response) {
-                  // Handle errors or validation errors
-                  if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
-                      // Display validation errors
-                      // Example assuming you have a div with id 'subscriber-errors'
-                      $('#subscriber-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
-                  }
-              }
-          });
-      });
-  });
+    $('#subscriber-form').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success_message_services) {
+                    $('#subscriber-success').text(response.success_message_services);
+                }
+                // Handle other success scenarios or clear form fields
+            },
+            error: function(response) {
+                // Handle errors or validation errors
+                if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                    // Display validation errors
+                    // Example assuming you have a div with id 'subscriber-errors'
+                    $('#subscriber-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                }
+            }
+        });
+    });
+});
 </script>
-
 
 
 <!--Room 1 model-->
@@ -623,12 +595,12 @@ cleanliness.</br>
                         <div class="col-md-6">
                             <div class="position-relative">
                                 <img class="img-fluid" src="{% static 'img/room-7.jpg' %}" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$46/Night</small></li>
+                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$40/Night</small></li>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="mb-3">
-                                <li> <strong>Description:</strong>Designed for the luxurious traveller in mind. Stretch out and relax on the king-sized bed and kick
+                                <li> <strong>Description:</strong> Designed for the luxurious traveller in mind. Stretch out and relax on the king-sized bed and kick
                                 back in front of Flat screen TV, get to work in our Circular table and enjoy Tea/coffee making
                                 facilities. Spacious bathroom with hot shower and some space to hang and arrange your clothing.
                                 <p class="mb-3">
@@ -636,17 +608,17 @@ cleanliness.</br>
                                   <ul class="list-unstyled mb-3">
                                       <table>
                                           <tr>
-                                              <td><i class="fa fa-bed text-primary me-2"></i> 1 Bed</td>
-                                              <td><i class="fa fa-bath text-primary me-2"></i> 1 Bath</td>
-                                              <td><i class="fa fa-wifi text-primary me-2"></i> Wifi</td>
+                                            <td><i class="fa fa-coffee text-primary me-2"></i> Tea/Coffee</td>
+                                              <td><i class="fa fa-bath text-primary me-2"></i>Shower room</td>
+                                              <td><i class="fa fa-wifi text-primary me-2"></i>Free Wifi</td>
                                           </tr>
                                           <tr>
-                                              <td><i class="fa fa-coffee text-primary me-2"></i> Coffee</td>
+                                              
                                               <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
-                                              <td><i class="fa fa-coffee text-primary me-2"></i>breakfast</td>
+                                              <td><i class="fa fa-coffee text-primary me-2"></i>Inc.breakfast</td>
                                           </tr>
                                           <tr>
-                                              <td><i class="fa fa-bed text-primary me-2"></i> Cotton Linen</td>
+                                              <td><i class="fa fa-bed text-primary me-2"></i>Cotton linen</td>
                                       
                                           </tr>
                                       </table>
@@ -671,7 +643,7 @@ cleanliness.</br>
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="room2ModalLabel">Twin Standard Room</h5>
+                <h5 class="modal-title" id="room2ModalLabel">Standard Twin Room</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -682,29 +654,29 @@ cleanliness.</br>
                         <div class="col-md-6">
                             <div class="position-relative">
                                 <img class="img-fluid" src="{% static 'img/room-2.jpg' %}" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$46/Night</small></li>
+                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$38.5/Night</small></li>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="mb-3">
-                                <li> <strong>Description:</strong>Perfect for sharing. Relax in this room with two single beds, complimentary Wi-Fi, Flat screen TV and
+                                <li> <strong>Description:</strong> Perfect for sharing. Relax in this room with two single beds, complimentary Wi-Fi, Flat screen TV and
                                     spacious bathroom.
                                     <p class="mb-3">
                                       <strong>Features:</strong>
                                       <ul class="list-unstyled mb-3">
-                                          <table>
-                                              <tr>
-                                                  <td><i class="fa fa-bed text-primary me-2"></i> 1 Bed</td>
-                                                  <td><i class="fa fa-bath text-primary me-2"></i> 1 Bath</td>
-                                                  <td><i class="fa fa-wifi text-primary me-2"></i> Wifi</td>
-                                              </tr>
-                                              <tr>
-                                                <td><i class="fa fa-bed text-primary me-2"></i> Cotton Linen</td>
-                                                  <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
-                                                  <td><i class="fa fa-coffee text-primary me-2"></i>breakfast</td>
-                                              </tr>
-                                             
-                                          </table>
+                                        <table>
+                                          <tr>
+                                            <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
+                                              <td><i class="fa fa-bath text-primary me-2"></i>Shower room</td>
+                                              <td><i class="fa fa-wifi text-primary me-2"></i>Free Wifi</td>
+                                          </tr>
+                                          <tr>
+                                              
+                                            <td><i class="fa fa-bed text-primary me-2"></i>Cotton linen</td>
+                                              <td><i class="fa fa-coffee text-primary me-2"></i>Inc.breakfast</td>
+                                          </tr>
+                                         
+                                      </table>
                                       </ul>
                                       
                                   </p>
@@ -738,31 +710,28 @@ cleanliness.</br>
                         <div class="col-md-6">
                             <div class="position-relative">
                                 <img class="img-fluid" src="{% static 'img/room-1.jpg' %}" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$39.5/Night</small></li>
+                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$38.5/Night</small></li>
                               </div>
                           </div>
                           <div class="col-md-6">
                               <p class="mb-3">
-                                  <li> <strong>Description:</strong>Functional and stylish. Settle into this medium sized guest room with Air condition, Double sized
+                                  <li> <strong>Description:</strong> Functional and stylish. Settle into this medium sized guest room with Air condition, Double sized
                                       bed, Flat screen TV work desk and medium sized bathroom and enjoy Free high-speed Wi-Fi.
                                       <p class="mb-3">
                                         <strong>Features:</strong>
                                         <ul class="list-unstyled mb-3">
                                             <table>
                                                 <tr>
-                                                    <td><i class="fa fa-bed text-primary me-2"></i> 1 Bed</td>
-                                                    <td><i class="fa fa-bath text-primary me-2"></i> 1 Bath</td>
-                                                    <td><i class="fa fa-wifi text-primary me-2"></i> Wifi</td>
+                                                  <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
+                                                    <td><i class="fa fa-bath text-primary me-2"></i>Shower room</td>
+                                                    <td><i class="fa fa-wifi text-primary me-2"></i>Free Wifi</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><i class="fa fa-coffee text-primary me-2"></i> Coffee</td>
-                                                    <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
-                                                    <td><i class="fa fa-coffee text-primary me-2"></i>breakfast</td>
+                                                   
+                                                    <td><i class="fa fa-coffee text-primary me-2"></i>Inc.breakfast</td>
+                                                    <td><i class="fa fa-bed text-primary me-2"></i>Cotton linen</td>
                                                 </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-bed text-primary me-2"></i> Cotton Linen</td>
-                                            
-                                                </tr>
+                                               
                                             </table>
                                         </ul>
                                         
@@ -798,27 +767,28 @@ cleanliness.</br>
                         <div class="col-md-6">
                             <div class="position-relative">
                                 <img class="img-fluid" src="{% static 'img/room-8.jpg' %}" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$35.5/Night</small></li>
+                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$30/Night</small></li>
                               </div>
                           </div>
                           <div class="col-md-6">
                               
                           <p class="mb-3">
-                              <li> <strong>Description:</strong>Designed and styled for single travellers who have a comfort mind with Flat screen TV high speed
+                              <li> <strong>Description:</strong> Designed and styled for single travellers who have a comfort mind with Flat screen TV high speed
                                   internet Wi-Fi, spacious bathroom and one single bed.
                                   <p class="mb-3">
                                     <strong>Features:</strong>
                                     <ul class="list-unstyled mb-3">
                                         <table>
                                             <tr>
-                                                <td><i class="fa fa-bed text-primary me-2"></i> 1 Bed</td>
-                                                <td><i class="fa fa-bath text-primary me-2"></i> 1 Bath</td>
-                                                <td><i class="fa fa-wifi text-primary me-2"></i> Wifi</td>
+                                              <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
+                                                <td><i class="fa fa-bath text-primary me-2"></i>Shower room</td>
+                                                <td><i class="fa fa-wifi text-primary me-2"></i>Free Wifi</td>
                                             </tr>
                                             <tr>
-                                              <td><i class="fa fa-bed text-primary me-2"></i> Cotton Linen</td>
-                                                <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
-                                                <td><i class="fa fa-coffee text-primary me-2"></i>breakfast</td>
+                                              
+                                                
+                                                <td><i class="fa fa-coffee text-primary me-2"></i>Inc.breakfast</td>
+                                                <td><i class="fa fa-bed text-primary me-2"></i>Cotton linen</td>
                                             </tr>
                                            
                                         </table>
@@ -843,7 +813,7 @@ cleanliness.</br>
   <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
           <div class="modal-header bg-primary text-white">
-              <h5 class="modal-title" id="room2ModalLabel">Delux Single Room</h5>
+              <h5 class="modal-title" id="room2ModalLabel">Deluxe Single Room</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
@@ -854,33 +824,33 @@ cleanliness.</br>
                       <div class="col-md-6">
                           <div class="position-relative">
                               <img class="img-fluid" src="{% static 'img/room-3.jpg' %}" alt="">
-                              <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$39.5/Night</small></li>
+                              <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$34/Night</small></li>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <p class="mb-3">
-                                <li> <strong>Description:</strong>Designed for single person with air conditioning, Tea/coffee making, Flat screen TV, wardrobe closet,
+                                <li> <strong>Description:</strong> Designed for single person with air conditioning, Tea/coffee making, Flat screen TV, wardrobe closet,
                                     complimentary high speed Wi-Fi, single bed and spacious bathroom.
                             </p>
                             <p class="mb-3">
                               <strong>Features:</strong>
                               <ul class="list-unstyled mb-3">
-                                  <table>
-                                      <tr>
-                                          <td><i class="fa fa-bed text-primary me-2"></i> 1 Bed</td>
-                                          <td><i class="fa fa-bath text-primary me-2"></i> 1 Bath</td>
-                                          <td><i class="fa fa-wifi text-primary me-2"></i> Wifi</td>
-                                      </tr>
-                                      <tr>
-                                          <td><i class="fa fa-coffee text-primary me-2"></i>Tea/Coffee</td>
-                                          <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
-                                          <td><i class="fa fa-coffee text-primary me-2"></i>Breakfast</td>
-                                      </tr>
-                                      <tr>
-                                          <td><i class="fa fa-bed text-primary me-2"></i> Cotton Linen</td>
-                                  
-                                      </tr>
-                                  </table>
+                                <table>
+                                  <tr>
+                                    <td><i class="fa fa-coffee text-primary me-2"></i> Tea/Coffee</td>
+                                      <td><i class="fa fa-bath text-primary me-2"></i>Shower room</td>
+                                      <td><i class="fa fa-wifi text-primary me-2"></i>Free Wifi</td>
+                                  </tr>
+                                  <tr>
+                                      
+                                      <td><i class="fa fa-tv text-primary me-2"></i> Cable TV</td>
+                                      <td><i class="fa fa-coffee text-primary me-2"></i>Inc.breakfast</td>
+                                  </tr>
+                                  <tr>
+                                      <td><i class="fa fa-bed text-primary me-2"></i>Cotton linen</td>
+                              
+                                  </tr>
+                              </table>
                               </ul>
                               
                           </p>

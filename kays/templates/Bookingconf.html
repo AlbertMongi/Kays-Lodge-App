@@ -1,86 +1,126 @@
-<!-- booking_confirmation_email.html -->
+{% extends 'base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Booking Confirmation</title>
-</head>
-<body>
-    <h2>Booking Confirmation</h2>
-    <p>Dear {{ user_name }},</p>
-    <p>Thank you for booking a {{ room_type }}. Your booking details are as follows:</p>
-    <ul>
-        <li>Name: {{ user_name }}</li>
-        <li>Email: {{ user_email }}</li>
-        <li>Check-in: {{ check_in }}</li>
-        <li>Check-out: {{ check_out }}</li>
-        <li>Room Type: {{ room_type }}</li>
-        <li>Special Requests: {{ special_requests }}</li>
-    </ul>
-    <p>We look forward to welcoming you!</p>
-</body>
-</html>
+{% block content %}
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" style="display: none;">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url('{% static "img/carousel-1.jpg" %}');">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center pb-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Reservation</h1>
+                <nav aria-label="breadcrumb">
+                    <!-- <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">About</li> -->
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
 
-import paypalcheckoutsdk.core as paypalrestsdk
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+           
+            <div class="text-center">
+                <h3 class="section-title text-center text-primary text-uppercase">Your room has been reserved successfully, please follow the link below to pay for your room</h3>
+            </div>
 
-paypalrestsdk.configure({
-    "mode": settings.PAYPAL_MODE,
-    "client_id": settings.PAYPAL_CLIENT_ID,
-    "client_secret": settings.PAYPAL_CLIENT_SECRET
-})
+            <br>
+            <div class="text-center">
+                <button class="btn btn-primary"><a href="https://www.booking.com/hotel/tz/kays-lodge-dar-es-salaam1.en-gb.html" target="_blank" class="text-white">Book.com</a></button>
+            </div>
+        </div>
+    </div>
+</div>
 
-def book(request):
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            booking = form.save()
-            payment = paypalrestsdk.Payment({
-                "intent": "sale",
-                "payer": {
-                    "payment_method": "paypal"
-                },
-                "redirect_urls": {
-                    "return_url": request.build_absolute_uri(reverse('payment_success')),
-                    "cancel_url": request.build_absolute_uri(reverse('payment_cancel'))
-                },
-                "transactions": [{
-                    "item_list": {
-                        "items": [{
-                            "name": "Booking Payment",
-                            "sku": "booking001",
-                            "price": "10.00",  # Change this to the booking amount
-                            "currency": "USD",
-                            "quantity": 1
-                        }]
-                    },
-                    "amount": {
-                        "total": "10.00",  # Change this to the booking amount
-                        "currency": "USD"
-                    },
-                    "description": "Booking Payment"
-                }]
-            })
-            if payment.create():
-                for link in payment.links:
-                    if link.method == "REDIRECT":
-                        redirect_url = str(link.href)
-                        return redirect(redirect_url)
-            else:
-                print(payment.error)
-                return JsonResponse({'error': payment.error}, status=500)
-    else:
-        form = BookingForm()
-    return render(request, 'book.html', {'form': form})
+  <!-- Newsletter Start -->
+  <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 border rounded p-1">
+            <div class="border rounded text-center p-1">
+                <div class="bg-white rounded text-center p-5">
+                    <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+                    <form id="subscriber-form" method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input name="email" class="form-control w-100 py-3 ps-4 pe-5" type="email" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+                        </div>
+                        <div class="form-error" id="email-subscriber-error"></div>
+                        <div class="success-message" id="subscriber-success" style="color: rgb(243, 169, 9);"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-def payment_success(request):
-    # Handle successful payment
-    return render(request, 'payment_success.html')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#contact-form').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success_message_contact) {
+                    $('#contact-success').text(response.success_message_contact);
+                }
+                // Handle other success scenarios or clear form fields
+            },
+            error: function(response) {
+                // Handle errors or validation errors
+                if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                    // Display validation errors
+                    // Example assuming you have a div with id 'contact-errors'
+                    $('#contact-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                }
+            }
+        });
+    });
 
-def payment_cancel(request):
-    # Handle canceled payment
-    return render(request, 'payment_cancel.html')
+    $('#subscriber-form').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.success_message_services) {
+                    $('#subscriber-success').text(response.success_message_services);
+                }
+                // Handle other success scenarios or clear form fields
+            },
+            error: function(response) {
+                // Handle errors or validation errors
+                if (response.status === 400 && response.responseJSON && response.responseJSON.errors) {
+                    // Display validation errors
+                    // Example assuming you have a div with id 'subscriber-errors'
+                    $('#subscriber-errors').text('Error: ' + Object.values(response.responseJSON.errors).join(', '));
+                }
+            }
+        });
+    });
+});
+</script>
 
-
-
-    
+{% endblock %}

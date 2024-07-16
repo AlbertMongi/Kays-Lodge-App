@@ -71,12 +71,13 @@
                                     <label for="surname">Surname</label>
                                 </div>
                             </div>
+
+
                             <div class='col-md-6'>
                                 <div class="form-group">
                                     <div class="input-group date" id="checkin" data-target-input="nearest">
-                                        <input type="text" name="check_in" placeholder="Check In" class="form-control datetimepicker-input" data-target="#checkin"/>
+                                        <input type="date" name="check_in" placeholder="Check In" class="form-control " data-target="#checkin" onchange="handleDateChange()"/>
                                         <div class="input-group-append" data-target="#checkin" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -84,13 +85,14 @@
                             <div class='col-md-6'>
                                 <div class="form-group">
                                     <div class="input-group date" id="checkout" data-target-input="nearest">
-                                        <input type="text" name="check_out" placeholder="Check Out" class="form-control datetimepicker-input" data-target="#checkout"/>
+                                        <input type="date" name="check_out" placeholder="Check Out" class="form-control " data-target="#checkout" onchange="handleDateChange()"/>
                                         <div class="input-group-append" data-target="#checkout" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
@@ -99,7 +101,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select name="number_of_guests" class="form-select" id="number">
+                                    <select name="num_guests" class="form-select" id="number">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                     </select>
@@ -108,17 +110,18 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select name="available_rooms" class="form-select" id="available-rooms">
-                                        <!-- <option selected disabled>Available Rooms</option> -->
-                                        {% if available_rooms %}
-                                            {% for room in available_rooms %}
-                                                <option value="{{ room.id }}">{{ room.number }}</option>
-                                            {% endfor %}
-                                        {% else %}
-                                            <option value="" disabled>No available rooms</option>
-                                        {% endif %}
+                                    <select name="room" class="form-select" id="available-rooms">
+                                        <option value=""></option>
                                     </select>
                                     <label for="available-rooms">Available Rooms</label>
+                                </div>
+                            </div>
+                            <input type="price" hidden name="price2"  id="price2" >
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="price" name="price" class="form-control" id="price" placeholder="Price" readonly>
+                                    <label for="price">Total Amount</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -126,9 +129,16 @@
                                     <textarea name="special_request" class="form-control" placeholder="Special Request" id="special_request" style="height: 100px"></textarea>
                                     <label for="special_request">Special Request</label>
                                 </div>
+                            <!-- </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                                    {% if form.errors.captcha %}
+                                        <p class="text-danger">{{ form.errors.captcha }}</p>
+                                    {% endif %}
+                                </div> -->
                             </div>
-                        </div>
-                        
+                    
                         <div class="my-3"></div>
                     
                         <div class="row">
@@ -141,21 +151,15 @@
                         </div>
                     </form>                    
     </div>
-</di>
+</div>
     </div>
 </div>
      
     </div>
 </div>
 
-<!-- Booking End -->
-
-<!-- <h2>Accepted Payment Methods</h2>
-<div class="payment-methods"> -->
-    <!-- PayPal -->
-    <!-- <div class="payment-method">
-        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="PayPal">
-    </div> -->
+<!-- Include Google reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!-- Newsletter Start -->
 <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -183,90 +187,139 @@
         </div>
     </div>
 </div>
-
-<!--Calendar Javascript Validation-->
-   <!-- <script type="text/javascript">
-       $(function () {
-           $('#checkin').datetimepicker();
-           $('#checkout').datetimepicker({
-               useCurrent: false
-           });
-   
-           $("#checkin").on("change.datetimepicker", function (e) {
-               $('#checkout').datetimepicker('minDate', e.date);
-           });
-
-           $('#checkin').on('change.datetimepicker', function(e){
-            let dateObject = new Date(e.date._d)
-            const day = dateObject.getDate()
-            const month = dateObject.getMonth() + 1
-            const year = dateObject.getFullYear()
-
-            const checkinDate = `${day}-${month}-${year}`
-
-            $(document).ready(function(){
-                console.log('reday for ajax')
-            })
-           })
-       });
-   </script> -->
-
-   <script type="text/javascript">
-    $(document).ready(function(){
-        $('#checkin').datetimepicker();
-           $('#checkout').datetimepicker({
-               useCurrent: false
-           });
-   
-           $("#checkin").on("change.datetimepicker", function (e) {
-            $('#checkout').datetimepicker('minDate', e.date);
-        });
-
-        $('#checkin').on('change.datetimepicker', function(e){
-            let dateObject = new Date(e.date._d)
-            const day = dateObject.getDate()
-            const month = dateObject.getMonth() + 1
-            const year = dateObject.getFullYear()
-
-            const checkinDate = `${day}-${month}-${year}`
-
-    function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        // Does this cookie string begin with the name we want?
-        if (cookie.substring(0, name.length + 1) === (name + "=")) {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-            break;
-        }
-        }
-    }
-         return cookieValue;
-}
-
+<script>
+    $(document).ready(function() {
+        // Function to fetch available rooms based on check-in and check-out dates
+        function getAvailableRooms() {
+            var checkIn = $('input[name="check_in"]').val();
+            var checkOut = $('input[name="check_out"]').val();
+    
+            var checkInDate = new Date(checkIn);
+            var checkOutDate = new Date(checkOut);
+    
+            if (checkOutDate <= checkInDate) {
+                alert('Check-out date must be after check-in date');
+                return;
+            }
+    
+            var today = new Date();
+            if (checkInDate < today || checkOutDate < today) {
+                alert('Dates cannot be in the past');
+                return;
+            }
+    
+            // Make AJAX request to fetch available rooms
             $.ajax({
-                url: "http://127.0.01:8000/booking/available-rooms",
-                method: 'POST',
-                dataType: 'json',
+                url: '{% url "check_available_rooms" %}', // Replace with your Django URL
+                type: 'POST',
                 headers: {
-                    "X-CSRFToken": getCookie("csrftoken"), 
+                    'X-CSRFToken': '{{ csrf_token }}'
                 },
-                data: JSON.stringify({
-                    check_in: checkinDate
-                }),
+                contentType: 'application/json',
+                data: JSON.stringify({ check_in: checkIn, check_out: checkOut }),
                 success: function(data) {
-                    console.log('response data', data)
+                    var roomSelect = $('#available-rooms');
+                    roomSelect.empty(); // Clear current options
+    
+                    $.each(data.rooms, function(index, room) {
+                        var option = $('<option></option>')
+                            .attr('value', room.id)
+                            .attr('data-price', room.price) // Store room price as data attribute
+                            .text(room.name);
+                        roomSelect.append(option);
+                    });
+    
+                    // Trigger change event manually to update price based on initial room selection
+                    roomSelect.change(); // Changed to roomSelect.change() from $('#available-rooms').change();
                 },
                 error: function(xhr, status, error) {
-                    console.log('an error occured ', error.mesasage)
+                    console.error('Error:', error);
                 }
-            })
+            });
+        }
+    
+        // Function to handle number of guests change
+        function handleNumberChange() {
+            var numGuests = parseInt($('#number').val());
+            var roomPrice = parseFloat($('#available-rooms option:selected').data('price'));
+            var checkInDate = new Date($('input[name="check_in"]').val()); // Corrected to use input[name="check_in"]
+            var checkOutDate = new Date($('input[name="check_out"]').val()); // Corrected to use input[name="check_out"]
+            var days = calculateNumberOfDays(checkInDate, checkOutDate);
+            var totalPrice = calculateTotalPrice(roomPrice, numGuests, days);
+    
+            var totalPriceFormatted = '$' + totalPrice.toFixed(2); // Format with dollar sign
+            $('#price').val(totalPriceFormatted); // Display price with dollar sign
+        }
+    
+        // Function to handle room selection change
+        function handleRoomChange() {
+            var selectedRoomPrice = parseFloat($('#available-rooms option:selected').data('price'));
+            var numGuests = parseInt($('#number').val());
+            var checkInDate = new Date($('input[name="check_in"]').val()); // Corrected to use input[name="check_in"]
+            var checkOutDate = new Date($('input[name="check_out"]').val()); // Corrected to use input[name="check_out"]
+            var days = calculateNumberOfDays(checkInDate, checkOutDate);
+            var totalPrice = calculateTotalPrice(selectedRoomPrice, numGuests, days);
+    
+            var totalPriceFormatted = '$' + totalPrice.toFixed(2); // Format with dollar sign
+            $('#price').val(totalPriceFormatted); // Display price with dollar sign
+        }
+    
+        // Function to calculate total price including additional amount based on conditions
+        function calculateTotalPrice(roomPrice, numGuests, days) {
+            var additionalAmount = calculateAdditionalAmount(roomPrice, numGuests);
+            var totalPrice = (roomPrice + additionalAmount) * days; // Multiply by days
+            return totalPrice;
+        }
+    
+        // Function to calculate additional amount based on conditions
+        function calculateAdditionalAmount(roomPrice, numGuests) {
+            var additionalAmount = 0;
+            var roomName = $('#available-rooms option:selected').text().trim();
+    
+            // Add logic for additional amount based on room or guest conditions if needed
+            if (roomName !== 'Room no.1 - Standard Single Room' 
+                && roomName !== 'Room no.5 - Standard Single Room' 
+                && roomName !== 'Room no.6 - Standard Single Room' 
+                && roomName !== 'Room no.15 - Deluxe Single Room') {
+                
+                if (roomName === 'Room no.7 - Standard Twin Room' && numGuests === 2) {
+                    additionalAmount = 11;
+                } else if (roomPrice === 40 && numGuests === 2) {
+                    additionalAmount = 6;
+                } else if (roomPrice === 35 && numGuests === 2) {
+                    additionalAmount = 5;
+                }
+            }
+    
+            return additionalAmount;
+        }
+    
+        // Function to calculate number of days between two dates
+        function calculateNumberOfDays(checkInDate, checkOutDate) {
+            // Calculate the difference in milliseconds
+            var differenceMs = checkOutDate.getTime() - checkInDate.getTime();
+            // Convert milliseconds to days
+            var days = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
+            return days;
+        }
+    
+        // Event listeners
+        $('input[name="check_in"]').on('change', getAvailableRooms);
+        $('input[name="check_out"]').on('change', getAvailableRooms);
+        $('#number').on('change', handleNumberChange);
+        $('#available-rooms').on('change', handleRoomChange);
+    
+        // Initial load: Fetch available rooms based on default dates (if any)
+        getAvailableRooms();
+    });
+</script>
 
-        })
-    })
-   </script>
+
+    
+{% comment %}     
+    <script>
+        $('input[name="check_in"]').change(getAvailableRooms());
+    </script> {% endcomment %}
 
      <!-- validate checkout dates -->
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -274,5 +327,3 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 {% endblock %}
-
- 
