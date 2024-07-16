@@ -33,4 +33,5 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'check_in': forms.DateTimeInput(attrs={'class': 'form-control datetimepicker-input', 'data-target': '#checkin'}),
             'check_out': forms.DateTimeInput(attrs={'class': 'form-control datetimepicker-input', 'data-target': '#checkout'}),
-        }
+            
+        } 

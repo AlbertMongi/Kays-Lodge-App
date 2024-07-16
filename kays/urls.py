@@ -10,5 +10,6 @@ urlpatterns = [
     path('contact', views.contact, name="contact"),
     path('rooms', views.rooms, name="rooms"),
     path('gallery', views.gallery, name="gallery"),
-    path('booking_confirmation_view/', views.booking_confirmation_view, name="booking_confirmation_view"),
+    path('booking_confirmation_view/', views.booking_confirmation_view, name="booking_confirmation_view")
+
 ]

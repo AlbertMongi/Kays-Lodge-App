@@ -7,7 +7,7 @@ from django.utils import timezone
 
 class team(models.Model):
     name = models.CharField(max_length=100)
-    img = models.ImageField(upload_to='pics')
+    img = models.ImageField(upload_to='team_pics/')
     desc = models.TextField()
 
 class Subscriber(models.Model):
@@ -42,6 +42,10 @@ class Room(models.Model):
 
     def __str__(self) -> str:
         return self.room_name
+from django.db import models
+
+
+
 
 class Booking(models.Model):
     name = models.CharField(max_length=100)
@@ -50,9 +54,9 @@ class Booking(models.Model):
     check_out = models.DateTimeField()
     email = models.EmailField()
     num_guests = models.IntegerField(default=1)
-    special_request = models.TextField(max_length=200, default="")
+    special_request = models.TextField(max_length=200, default="", blank=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-
+       # captcha = models.CharField(max_length=100)
     def __str__(self):
         return self.name
 

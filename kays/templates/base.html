@@ -72,17 +72,18 @@
             <div class="col-lg-7 px-5 text-start">
               <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                 <i class="fa fa-envelope text-primary me-2"></i>
-                <p class="mb-0">www.kayslodge.co.tz</p>
+                <p class="mb-0">info@kayslodge.co.tz</p>
               </div>
               <div class="h-100 d-inline-flex align-items-center py-2">
                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                <p class="mb-0">0777 922 276/0762 922 276</p>
+                <p class="mb-0">0772 922 276/0762 922 276</p>
               </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
               <div class="d-inline-flex align-items-center py-2">
-                <a class="me-3" href="https://www.instagram.com/kayslodgetz/"><i class="fab fa-instagram"></i></a>
-                <a class="me-3" href="https://www.facebook.com/profile.php?id=100073411011650"><i class="fab fa-facebook-f"></i></a>
+                <a class="me-3" href="https://www.instagram.com/kayslodgetz/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="me-3" href="https://www.facebook.com/profile.php?id=100073411011650" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
                 <!-- <a class="me-3" href=""><i class="fab fa-twitter"></i></a> -->
               
                 
@@ -115,12 +116,15 @@
             >
               <div class="navbar-nav mr-auto py-0">
                 <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
-                <a href="{% url 'rooms' %}" class="nav-item nav-link">Rooms</a>
-                <a href="{% url 'booking' %}" class="nav-item nav-link">Reservation</a>
-                <a href="{% url 'gallery' %}" class="nav-item nav-link">Gallery</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
                 <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
-                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'rooms' %}" class="nav-item nav-link">Rooms</a>
+                <a href="{% url 'gallery' %}" class="nav-item nav-link">Gallery</a>
+                <a href="{% url 'booking' %}" class="nav-item nav-link">Reservation</a>
                 <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                
+                
+               
                 <div class="nav-item dropdown">
                   <!-- <div class="dropdown-menu rounded-0 m-0">
                     <a href="booking.html" class="dropdown-item">Booking</a>
@@ -147,7 +151,14 @@
     >
       <div class="container pb-5">
         <div class="row g-5">
-         
+          <!-- <div class="col-md-6 col-lg-4">
+                     <div class="bg-primary rounded p-4">
+                         <a href="index.html"><h1 class="text-white text-uppercase mb-3">Kays Lodge</h1></a>
+                         <p class="text-white mb-0">
+                             
+                         </p>
+                     </div>
+                 </div> -->
           <div class=" d-lg-block col-lg-3 h-50">
             <a href="{% url 'index' %}">
               <div>
@@ -159,7 +170,7 @@
                   alt="kays Lodge logo"
                 />
               </div>
-             
+
               
             </a>
           </div>
@@ -176,14 +187,14 @@
               <i class="fa fa-phone-alt me-3"></i>0772 922 276/0762 922 276
             </p>
             <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>www.kayslodge.co.tz
+              <i class="fa fa-envelope me-3"></i>info@kayslodge.co.tz
             </p>
             <div class="d-flex pt-2">
-              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/kayslodgetz/"
+              <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/kayslodgetz/"
                 ><i class="fab fa-instagram"></i
               ></a>
               
-              <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100073411011650"
+              <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/profile.php?id=100073411011650"
                 ><i class="fab fa-facebook-f"></i
               ></a>
               
@@ -200,7 +211,7 @@
                 </h6>
                 <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
                 <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
-              
+     
               </div>
               <div class="col-md-6">
                 <h6
@@ -216,22 +227,26 @@
                 <a class="btn btn-link" href="">Laundry service</a>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"></div>
-            <div class="col-md-6 text-center text-md-end">
-              <div class="footer-menu">
-               
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+</div>
+<div class="container">
+    <div class="copyright">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">Kays Lodge</a>, All Rights Reserved. 
+  
+  <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+  <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">Mongi</a> -->
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+               
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+  
     <!-- Footer End -->
      
 
