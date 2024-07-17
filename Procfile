@@ -1,0 +1,1 @@
+web: gunicorn kays_lodge.wsgi --log-file=-
