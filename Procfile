@@ -1,1 +1,1 @@
-web: gunicorn kays_lodge.wsgi --log-file=-
+web gunicorn kays_lodge.wsgi:application --log-file -
