@@ -474,16 +474,16 @@ cleanliness.</br>
 <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
   <div class="container">
       <div class="owl-carousel testimonial-carousel py-5">
-          {% for testimony in testimonies %}
+          {% for Testimony in Testimonies %}
           <div class="testimonial-item position-relative bg-white rounded overflow-hidden p-4">
-              <p class="mb-4">"{{ testimony.content }}"</p>
+              <p class="mb-4">"{{ Testimony.content }}"</p>
               <div class="d-flex align-items-center">
                   <!-- {% if testimony.image %} -->
                   <!-- <img class="img-fluid flex-shrink-0 rounded" src="{{ testimony.image.url }}" style="width: 45px; height: 45px;"> -->
                   <!-- {% endif %} -->
                   <div class="ps-3">
-                      <h6 class="fw-bold mb-1">{{ testimony.client_name }}</h6>
-                      <small class="text-muted">{{ testimony.profession }}</small>
+                      <h6 class="fw-bold mb-1">{{ Testimony.client_name }}</h6>
+                      <small class="text-muted">{{ Testimony.profession }}</small>
                   </div>
               </div>
               <i class="fa fa-quote-right fa-3x text-primary position-absolute bottom-0 end-0 me-4 mb-n2"></i>
