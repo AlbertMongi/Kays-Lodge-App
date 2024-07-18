@@ -94,7 +94,7 @@ DEFAULT_FROM_EMAIL = 'Kays Lodge Room Reservation'
 WSGI_APPLICATION = 'kays_lodge.wsgi.application'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd88hm68plsggp9',
         'USER': 'u6c93obi6bu1bd',
         'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
