@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-evo4=w2az58#)9r7a&sc7woc3u(&7hh4769t-*(3uy0-_*i&7q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['kaysapp.herokuapp.com']
 
 
 # Application definition
@@ -94,11 +94,11 @@ DEFAULT_FROM_EMAIL = 'Kays Lodge Room Reservation'
 WSGI_APPLICATION = 'kays_lodge.wsgi.application'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kay2',
-        'USER': 'postgres',
-        'PASSWORD': 'myworld66',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd88hm68plsggp9',
+        'USER': 'u6c93obi6bu1bd',
+        'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
+        'HOST': 'c1i13pt05ja4ag.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
     }
 }
 
