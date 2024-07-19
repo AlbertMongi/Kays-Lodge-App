@@ -56,7 +56,7 @@ class Booking(models.Model):
     num_guests = models.IntegerField(default=1)
     special_request = models.TextField(max_length=200, default="", blank=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-       # captcha = models.CharField(max_length=100)
+    # captcha = models.CharField(max_length=100)
     def __str__(self):
         return self.name
 
