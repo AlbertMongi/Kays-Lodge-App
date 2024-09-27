@@ -1,7 +1,35 @@
 {% extends 'base.html' %}
+{% block title %} Quality beds {% endblock %}
  {% load static %} 
+
  
  {% block content %}
+ {% block meta %}
+<meta name="description" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania. Perfect for business travelers, tourists, and those seeking a serene escape with modern amenities.">
+<meta name="keywords" content="best lodge in Dar es Salaam, best luxury lodge Tanzania, accommodation in Dar es Salaam, best lodge in Tanzania, Dar es Salaam accommodation, luxury stay, beach lodge, Tanzania lodge, hotel in Dar es Salaam, tourism in Tanzania, lodge with modern amenities, serene lodge, business lodge, vacation lodge Dar es Salaam">
+<meta name="author" content="Kays Lodge">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta property="og:description" content="Discover a tranquil and luxurious stay at our lodge in Dar es Salaam. Ideal for vacations, business trips, or a peaceful retreat, with top-notch services and breathtaking views." />
+<meta property="og:url" content="https://www.kayslodge.co.tz/"/>
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg"/>
+<meta property="og:image:alt" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania." />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="kayslodgetz" />
+<meta property="og:locale" content="en_TZ" />
+
+<!-- Optional Twitter Meta Tags for Better Integration -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta name="twitter:description" content="Stay at our lodge in Dar es Salaam for an unforgettable experience of comfort and relaxation, whether you're here for business or leisure." />
+<meta name="twitter:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
  <div class="container-xxl bg-white p-0">
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">

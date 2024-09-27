@@ -1,4 +1,32 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% block title %} Luxury lodge in Dar es saalam {% endblock %}
+{% load static %} {% block content %}
+{% block meta %}
+<meta name="description" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania. Perfect for business travelers, tourists, and those seeking a serene escape with modern amenities.">
+<meta name="keywords" content="best lodge in Dar es Salaam, best luxury lodge Tanzania, accommodation in Dar es Salaam, best lodge in Tanzania, Dar es Salaam accommodation, luxury stay, beach lodge, Tanzania lodge, hotel in Dar es Salaam, tourism in Tanzania, lodge with modern amenities, serene lodge, business lodge, vacation lodge Dar es Salaam">
+<meta name="author" content="Kays Lodge">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta property="og:description" content="Discover a tranquil and luxurious stay at our lodge in Dar es Salaam. Ideal for vacations, business trips, or a peaceful retreat, with top-notch services and breathtaking views." />
+<meta property="og:url" content="https://www.kayslodge.co.tz/"/>
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg"/>
+<meta property="og:image:alt" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania." />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="kayslodgetz" />
+<meta property="og:locale" content="en_TZ" />
+
+<!-- Optional Twitter Meta Tags for Better Integration -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta name="twitter:description" content="Stay at our lodge in Dar es Salaam for an unforgettable experience of comfort and relaxation, whether you're here for business or leisure." />
+<meta name="twitter:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
 <style>
   .text-body {
       text-align: justify;  /* Justify text to create straight edges */
@@ -29,7 +57,7 @@
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="w-100" src="{% static 'img/carousel-1.jpg' %}" alt="Image" />
+          <img class="w-100" src="{% static 'img/carousel-1.jpg' %}" alt="luxury beds in our lodge" />
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="p-3" style="max-width: 700px">
               <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
@@ -40,7 +68,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="Image" />
+          <img class="w-100" src="{% static 'img/carousel-2.jpg' %}" alt="good environment for your holiday" />
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="p-3" style="max-width: 700px">
               <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
@@ -51,7 +79,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img class="w-100" src="{% static 'img/carousel-3.jpg' %}" alt="Image" />
+          <img class="w-100" src="{% static 'img/carousel-3.jpg' %}" alt="Best lodge in Tanzania" />
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="p-3" style="max-width: 700px">
               <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
@@ -62,7 +90,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img class="w-100" src="{% static 'img/carousel-4.jpg' %}" alt="Image" />
+          <img class="w-100" src="{% static 'img/carousel-4.jpg' %}" alt="Quality and silent place for your holiday" />
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="p-3" style="max-width: 700px">
               <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
@@ -143,28 +171,28 @@ cleanliness.</br>
                 class="img-fluid rounded w-75 wow zoomIn"
                 data-wow-delay="0.1s"
                 src="{% static 'img/about-1.jpg' %}"
-                style="margin-top: 25%"
+                style="margin-top: 25%" alt="Sweet food in our lodge"
               />
             </div>
             <div class="col-6 text-start">
               <img
                 class="img-fluid rounded w-100 wow zoomIn"
                 data-wow-delay="0.3s"
-                src="{% static 'img/about-2.jpg' %}"
+                src="{% static 'img/about-2.jpg' %}" alt="Sweet food in our lodge"
               />
             </div>
             <div class="col-6 text-end">
               <img
                 class="img-fluid rounded w-50 wow zoomIn"
                 data-wow-delay="0.5s"
-                src="{% static 'img/about-3.jpg' %}"
+                src="{% static 'img/about-3.jpg' %}" alt="Sweet food in our lodge"
               />
             </div>
             <div class="col-6 text-start">
               <img
                 class="img-fluid rounded w-75 wow zoomIn"
                 data-wow-delay="0.7s"
-                src="{% static 'img/about-4.jpg' %}"
+                src="{% static 'img/about-4.jpg' %}" alt="Sweet food in our lodge"
               />
             </div>
           </div>
@@ -189,7 +217,7 @@ cleanliness.</br>
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="room-item shadow rounded overflow-hidden">
                 <div class="position-relative">
-                    <img class="img-fluid" src="{% static 'img/room-6.jpg' %}" alt="">
+                    <img class="img-fluid" src="{% static 'img/room-6.jpg' %}" alt="Quality bed for your holiday">
                     
                 </div>
                 <div class="p-4 mt-2">
@@ -215,7 +243,7 @@ cleanliness.</br>
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="room-item shadow rounded overflow-hidden">
                 <div class="position-relative">
-                    <img class="img-fluid" src="{% static 'img/room-2.jpg' %}" alt="">
+                    <img class="img-fluid" src="{% static 'img/room-2.jpg' %}" alt="Quality and silent rooms">
                   
                 </div>
                 <div class="p-4 mt-2">
@@ -244,7 +272,7 @@ cleanliness.</br>
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="room-item shadow rounded overflow-hidden">
                 <div class="position-relative">
-                    <img class="img-fluid" src="{% static 'img/room-1.jpg' %}" alt="">
+                    <img class="img-fluid" src="{% static 'img/room-1.jpg' %}" alt="Quality room for your holiday">
                     
                 </div>
                 <div class="p-4 mt-2">
@@ -270,7 +298,7 @@ cleanliness.</br>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="{% static 'img/room-8.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/room-8.jpg' %}" alt="Quality room for your holiday">
                         
                     </div>
                     <div class="p-4 mt-2">
@@ -296,7 +324,7 @@ cleanliness.</br>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="{% static 'img/room-3.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/room-3.jpg' %}" alt="Quality room for your holiday">
                       
                     </div>
                     <div class="p-4 mt-2">
@@ -594,7 +622,7 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{% static 'img/room-7.jpg' %}" alt="">
+                                <img class="img-fluid" src="{% static 'img/room-7.jpg' %}" alt="Good condition bed for your night">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$40/Night</small></li>
                             </div>
                         </div>
@@ -653,7 +681,7 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{% static 'img/room-2.jpg' %}" alt="">
+                                <img class="img-fluid" src="{% static 'img/room-2.jpg' %}" alt="Quality room for your night">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$35/Night</small></li>
                             </div>
                         </div>
@@ -709,7 +737,7 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{% static 'img/room-1.jpg' %}" alt="">
+                                <img class="img-fluid" src="{% static 'img/room-1.jpg' %}" alt="Best room for your night">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$35/Night</small></li>
                               </div>
                           </div>
@@ -766,7 +794,7 @@ $(document).ready(function() {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{% static 'img/room-8.jpg' %}" alt="">
+                                <img class="img-fluid" src="{% static 'img/room-8.jpg' %}" alt="Quality room for your night">
                                 <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$35/Night</small></li>
                               </div>
                           </div>

@@ -3,11 +3,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Kays Lodge</title>
+    <title>{% block title %} {% endblock %} Luxury Lodge in Dar es Salaam, Tanzania </title>
+{% block meta %}
+<meta name="description" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania. Perfect for business travelers, tourists, and those seeking a serene escape with modern amenities.">
+<meta name="keywords" content="best lodge in Dar es Salaam, best luxury lodge Tanzania, accommodation in Dar es Salaam, best lodge in Tanzania, Dar es Salaam accommodation, luxury stay, beach lodge, Tanzania lodge, hotel in Dar es Salaam, tourism in Tanzania, lodge with modern amenities, serene lodge, business lodge, vacation lodge Dar es Salaam">
+<meta name="author" content="Kays Lodge">
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta property="og:description" content="Discover a tranquil and luxurious stay at our lodge in Dar es Salaam. Ideal for vacations, business trips, or a peaceful retreat, with top-notch services and breathtaking views." />
+<meta property="og:url" content="https://www.kayslodge.co.tz/"/>
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg"/>
+<meta property="og:image:alt" content="Experience luxury and comfort at our lodge in Dar es Salaam, Tanzania." />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="kayslodgetz" />
+<meta property="og:locale" content="en_TZ" />
+
+<!-- Optional Twitter Meta Tags for Better Integration -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Luxury Lodge in Dar es Salaam, Tanzania" />
+<meta name="twitter:description" content="Stay at our lodge in Dar es Salaam for an unforgettable experience of comfort and relaxation, whether you're here for business or leisure." />
+<meta name="twitter:image" content="https://www.kayslodge.co.tz/static/img/carousel-1.jpg" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+  </head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -62,7 +86,7 @@
                       <img
                               class="h-100 w-75"
                               src="{% static 'img/Kays-Lodge-logo-1-large.png' %}"
-                              alt="kays lodge logo"
+                              alt="logo of luxury lodge"
                       />
                   </div>
               </a>
@@ -98,7 +122,7 @@
                 <img
                         class="h-100 w-25"
                         src="{% static 'img/Kays-Lodge-logo-1-large.png' %}"
-                        alt="kays lodge logo"
+                        alt="logo of the best lodge in Tanzania"
                 />
             </div>
             </a>
@@ -164,10 +188,10 @@
               <div>
                 <img
                   class="object-contain"
-                  width="234"
-                  height="137"
+                  width="500"
+                  height="325"
                   src="{% static 'img/Kays-Lodge-logo-1-large.png' %}"
-                  alt="kays Lodge logo"
+                  alt="kays lodge logo best lodge in Tanzania"
                 />
               </div>
 
@@ -219,12 +243,12 @@
                 >
                   Services
                 </h6>
-                <a class="btn btn-link" href="">Free parking</a>
-                <a class="btn btn-link" href="">Free Wifi</a>
-                <a class="btn btn-link" href="">Free breakfast</a>
-                <a class="btn btn-link" href="">Airport transportation</a>
-                <a class="btn btn-link" href="">Garden seating</a>
-                <a class="btn btn-link" href="">Laundry service</a>
+                <a class="btn btn-link">Free parking</a>
+                <a class="btn btn-link" >Free Wifi</a>
+                <a class="btn btn-link" >Free breakfast</a>
+                <a class="btn btn-link">Airport transportation</a>
+                <a class="btn btn-link">Garden seating</a>
+                <a class="btn btn-link">Laundry service</a>
               </div>
             </div>
         </div>

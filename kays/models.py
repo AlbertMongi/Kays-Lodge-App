@@ -73,3 +73,27 @@ def check_room_availability(sender, instance, **kwargs):
     if instance.check_in >= instance.check_out:
         raise ValidationError('Check-in date must be before check-out date.')
     
+from django.db import models
+from django.utils.text import slugify
+from django.contrib.auth.models import User
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    published = models.BooleanField(default=False)
+    slug = models.SlugField(unique=True, blank=True)
+    # Optional metadata for SEO
+    meta_description = models.CharField(max_length=160, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)  # Automatically generate slug from the title
+        super(Post, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+def get_absolute_url(self):
+    return f'/{self.slug}/'
