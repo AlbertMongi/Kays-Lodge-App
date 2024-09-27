@@ -11,6 +11,7 @@ sitemaps = {
 urlpatterns = [
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
      path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+     path('googled0e1a3eddcf7aa60.html', TemplateView.as_view(template_name='googled0e1a3eddcf7aa60.html', content_type='text/html')),
     path("", views.index, name='index'),
     path('about/', views.about, name="about"),  # Added trailing slash
     path('services/', views.services, name="services"),  # Added trailing slash
