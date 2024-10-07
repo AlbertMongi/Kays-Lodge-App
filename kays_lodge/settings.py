@@ -92,17 +92,17 @@ DEFAULT_FROM_EMAIL = 'Kays Lodge Room Reservation'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-WSGI_APPLICATION = 'kays_lodge.wsgi.application'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'd88hm68plsggp9',
-        'USER': 'u6c93obi6bu1bd',
-        'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
-        'HOST': 'c1i13pt05ja4ag.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT' : '5432'
-    }
-}
+# WSGI_APPLICATION = 'kays_lodge.wsgi.application'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'd88hm68plsggp9',
+#         'USER': 'u6c93obi6bu1bd',
+#         'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
+#         'HOST': 'c1i13pt05ja4ag.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
+#         'PORT' : '5432'
+#     }
+# }
 
 
 # Password validation
@@ -175,13 +175,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 django_heroku.settings(locals())
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'kays1',    # Replace with your PostgreSQL database name
-#         'USER': 'postgres',    # Replace with your PostgreSQL username
-#         'PASSWORD': '123',  # Replace with your PostgreSQL password
-#         'HOST': 'localhost',             # Or your database host
-#         'PORT': '5432',                  # Default PostgreSQL port
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kays1',    # Replace with your PostgreSQL database name
+        'USER': 'postgres',    # Replace with your PostgreSQL username
+        'PASSWORD': '123',  # Replace with your PostgreSQL password
+        'HOST': 'localhost',             # Or your database host
+        'PORT': '5432',                  # Default PostgreSQL port
+    }
+}
