@@ -197,7 +197,7 @@ def booking(request):
         if form.is_valid():
             # Save form data to the database
             booking_instance = form.save(commit=False)  # Don't save yet, we'll customize the email message first
-            booking_instance.status = 'Not Paid'  # Set status as 'Not Paid' by default
+            booking_instance.status = 'Not Paid'  # Set status as 'Not Paid' by default 
 
             # Retrieve room_id and calculate room_price from the database
             room_id = form.cleaned_data['room'].id
