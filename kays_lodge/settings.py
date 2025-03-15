@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-evo4=w2az58#)9r7a&sc7woc3u(&7hh4769t-*(3uy0-_*i&7q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.kayslodge.co.tz']
 
@@ -93,16 +93,16 @@ DEFAULT_FROM_EMAIL = 'Kays Lodge Room Reservation'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 WSGI_APPLICATION = 'kays_lodge.wsgi.application'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'd88hm68plsggp9',
-        'USER': 'u6c93obi6bu1bd',
-        'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
-        'HOST': 'c1i13pt05ja4ag.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT' : '5432'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'd88hm68plsggp9',
+#         'USER': 'u6c93obi6bu1bd',
+#         'PASSWORD': 'pdc16a61bea6dd2b84ae4b0568cc1140ddb20fa152d775f097f3de412251ea391',
+#         'HOST': 'c1i13pt05ja4ag.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
+#         'PORT' : '5432'
+#     }
+# }
 
 
 # Password validation
@@ -175,13 +175,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 django_heroku.settings(locals())
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'kays1',    # Replace with your PostgreSQL database name
-#         'USER': 'postgres',    # Replace with your PostgreSQL username
-#         'PASSWORD': '123',  # Replace with your PostgreSQL password
-#         'HOST': 'localhost',             # Or your database host
-#         'PORT': '5432',                  # Default PostgreSQL port
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kays1',    # Replace with your PostgreSQL database name
+        'USER': 'postgres',    # Replace with your PostgreSQL username
+        'PASSWORD': '123',  # Replace with your PostgreSQL password
+        'HOST': 'localhost',             # Or your database host
+        'PORT': '5432',                  # Default PostgreSQL port
+    }
+}

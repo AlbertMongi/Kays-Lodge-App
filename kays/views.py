@@ -179,14 +179,14 @@ def check_available_rooms(request):
         # Exclude booked rooms from available rooms
         available_rooms = Room.objects.exclude(id__in=booked_rooms)
         
-        # Construct JSON response with room information
+        # Construct JSON response with room information and other incfromation
         room_list = [{'id': room.id, 'name': room.room_name, 'price': room.price} for room in available_rooms]
         
         return JsonResponse({'rooms': room_list})
     
     except json.JSONDecodeError as e:
         return JsonResponse({'error': f'Invalid JSON format: {str(e)}'}, status=400)
-    
+     
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
